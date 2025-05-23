@@ -21,4 +21,7 @@ return this.http.post<APIResponseModel>("/api/ClientStrive/AddUpdateClient",obj)
   deleteClientById(id:number):Observable<APIResponseModel>{
 return this.http.delete<APIResponseModel>("/api/ClientStrive/DeleteClientByClientId?clientId=" + id);
   }
+  getAllEmployees():Observable<APIResponseModel>{
+    return this.http.get<APIResponseModel>("/api/ClientStrive/GetAllEmployee")
+  }
 }
