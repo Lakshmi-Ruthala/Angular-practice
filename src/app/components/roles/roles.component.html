@@ -1,0 +1,85 @@
+<div class="container">
+<p>{{firstName}}</p>
+<p>{{version}}</p>
+<p>{{currentDate}}</p>
+
+<div class="row">
+    <div class="col-3">
+        <p>{{firstName}}</p>  
+    </div>
+    <div class="col-3">
+        <p>{{version}}</p>
+    </div>
+    <div class="col-3">
+        <p>{{currentDate}}</p>
+    </div>
+    <div class="col-3">
+        <p>{{selectedState}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+<input type="text" [value]="firstName" class="form-control"/>
+    </div>
+    <div class="col-3">
+       <input [type]="inputType"/>
+    </div>
+    <div class="col-3">
+        <input [type]="inputType" [(ngModel)]="firstName"/>
+     </div>
+     <div class="col-3">
+       <select [(ngModel)]="selectedState">
+    <option value="MH">MH</option>    
+    <option value="MD">MD</option>    
+    <option value="MA">MA</option>    
+    <option value="MM">MM</option>    
+    </select>
+    
+     </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showAlert()">Show Alert</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showMessage('Show HTML')">Show HTML</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showMessage('Show CSS')">Show CSS</button>
+    </div>
+</div>
+
+
+<!-- <div class="row">
+    <div class="col-4">
+        <ul>
+            <li *ngFor="let item of roleList">{{item.lastName}}</li>
+        </ul>
+    </div>
+    <div class="col-4">
+        <select>
+            <option *ngFor="let data of roleList" [value]="data.id">{{data.firstName}}</option>
+        </select>
+    </div>
+     <div class="col-4">
+       <button class="btn btn-primary m-2" *ngFor="let item of roleList">{{item.bloodGroup}}</button>
+    </div>
+</div> -->
+
+<div class="row mt-3">
+  <table class="table table-bordered table-responsive">
+    <tr>
+        <th>S No</th>
+ <th>Last Name   </th>
+  <th>First Name   </th>
+   <th>Blood Group   </th>
+    </tr>
+   
+    <tr *ngFor="let item of roleList; let srno = index">
+        <td>{{srno + 1}}</td>
+    <td> {{item.lastName}}</td>   
+        <td> {{item.firstName}}</td>  
+          <td> {{item.bloodGroup}}</td> 
+    </tr>
+  </table>
+</div></div>
